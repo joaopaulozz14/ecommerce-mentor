@@ -1,0 +1,30 @@
+.product_container {
+  /* background-color: purple; */
+  align-self: flex-end;
+  justify-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 400px;
+}
+.product_container_image_big {
+  width: 400px;
+  height: 400px;
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    cursor: pointer;
+  }
+}
+.product_container_image_thumbnail {
+  display: flex;
+  gap: 25px;
+  img {
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,23 @@
+.main_container {
+  background-color: var(--white);
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.section_cart {
+  display: flex;
+  
+  max-width: 1240px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 60px;
+  margin-top: 80px;
+  padding: 20px;
+}
+/* .separate {
+  width: 50%;
+   background-color: yellow; 
+  border: 1px solid black;
+} */

@@ -1,0 +1,119 @@
+.lightbox {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.637);
+  width: 100%;
+  min-height: 100%;
+  display: flex; /* Ativa o Flexbox */
+  justify-content: center; /* Alinha no eixo horizontal (esquerda-direita) */
+  align-items: center;
+}
+.lightbox_container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 600px;
+}
+.lightbox_container_image_big {
+  width: 500px;
+  height: 500px;
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+  }
+}
+.lightbox_container_image_thumbnail {
+  display: flex;
+  gap: 25px;
+  /* img {
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    cursor: pointer;
+  } */
+}
+.thumbnail_wrapper {
+  position: relative;
+  display: inline-block;
+}
+.img_thumbnail {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  cursor: pointer;
+  display: block;
+}
+.img_thumbnail:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.thumbnail_wrapper:hover .img_thumbnail:not(.actual) {
+  filter: brightness(110%) contrast(100%) saturate(100%);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  border: 2px solid var(--primary-color);
+  background-color: rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+  /* opacity: 0; 
+  transition: opacity 0.3s ease-in-out; */
+}
+/* .thumbnail_wrapper:hover .overlay {
+  opacity: 1;
+} */
+
+.lightbox_close_button {
+  position: absolute;
+  top: -30px;
+  right: 60px;
+  color: var(--white);
+  font-weight: 500;
+  font-size: 18px;
+  cursor: pointer;
+}
+.lightbox_close_button:hover {
+  color: var(--primary-color);
+}
+
+.lightbox_previous_and_next {
+  background-color: var(--white);
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.lightbox_next_button {
+  position: absolute;
+  top: 220px;
+  right: 25px;
+}
+.lightbox_next_svg path {
+  fill: black;
+}
+
+.lightbox_next_svg:hover {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(99%) saturate(916%)
+    hue-rotate(2deg) brightness(101%) contrast(102%);
+}
+.lightbox_previous_button {
+  position: absolute;
+  top: 220px;
+  left: 25px;
+}
+
+.lightbox_previous_svg:hover {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(99%) saturate(916%)
+    hue-rotate(2deg) brightness(101%) contrast(102%);
+}

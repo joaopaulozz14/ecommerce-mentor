@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "image": {
+      "thumbnail": "src/assets/image-product-1-thumbnail.jpg",
+      "desktop": "src/assets/image-product-1.jpg"
+    }
+  },
+  {
+    "id": 2,
+    "image": {
+      "thumbnail": "src/assets/image-product-2-thumbnail.jpg",
+      "desktop": "src/assets/image-product-2.jpg"
+    }
+  },
+  {
+    "id": 3,
+    "image": {
+      "thumbnail": "src/assets/image-product-3-thumbnail.jpg",
+      "desktop": "src/assets/image-product-3.jpg"
+    }
+  },
+  {
+    "id": 4,
+    "image": {
+      "thumbnail": "src/assets/image-product-4-thumbnail.jpg",
+      "desktop": "src/assets/image-product-4.jpg"
+    }
+  }
+]
