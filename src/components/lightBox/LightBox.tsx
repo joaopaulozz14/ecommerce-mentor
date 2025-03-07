@@ -2,18 +2,30 @@ import { useData } from "../../context";
 import "./styles.css";
 import previous from "../../assets/icon-previous.svg";
 import next from "../../assets/icon-next.svg";
-import { useState } from "react";
 export default function LightBox() {
-  const { data, currentSlide, setCurrentSlide, setLightIsActive } = useData();
-  const [isActual, setIsActual] = useState();
-  const item = data.find((item) => item.id === currentSlide);
+  const {
+    selectedProduct,
+    currentSlide,
+    setCurrentSlide,
+    setLightIsActive,
+  } = useData();
 
+  
+  const photosThumbnail =
+    selectedProduct?.images.map((item) => item.thumbnail) ?? [];
+  const photosDesktop =
+    selectedProduct?.images.map((item) => item.desktop) ?? [];
+  
   function handleNext() {
-    setCurrentSlide(currentSlide === data.length ? 1 : currentSlide + 1);
+    setCurrentSlide(
+      currentSlide === photosThumbnail.length - 1 ? 0 : currentSlide + 1
+    );
   }
 
   function handlePrevious() {
-    setCurrentSlide(currentSlide === 1 ? data.length - 1 : currentSlide - 1);
+    setCurrentSlide(
+      currentSlide === 0 ? photosThumbnail.length - 1 : currentSlide - 1
+    );
   }
   return (
     <div className="lightbox">
@@ -45,20 +57,20 @@ export default function LightBox() {
           />
         </span>
         <div className="lightbox_container_image_big">
-          <img src={item?.image.desktop} alt="" />
+          <img src={photosDesktop[currentSlide]} alt="" />
         </div>
 
         <div className="lightbox_container_image_thumbnail">
-          {data.map((item) => (
-            <div key={item.id} className="thumbnail_wrapper">
+          {photosThumbnail.map((item, index) => (
+            <div key={index} className="thumbnail_wrapper">
               <img
-                src={item.image.thumbnail}
-                onClick={() => setCurrentSlide(item.id)}
+                src={item}
+                onClick={() => setCurrentSlide(index)}
                 className={`img_thumbnail ${
-                  currentSlide === item.id ? "actual" : ""
+                  currentSlide === index ? "actual" : ""
                 }`}
               />
-              {currentSlide === item.id && <div className="overlay"></div>}
+              {currentSlide === index && <div className="overlay"></div>}
             </div>
           ))}
         </div>

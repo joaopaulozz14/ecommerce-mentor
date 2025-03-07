@@ -1,6 +1,6 @@
 import Navbar from "../components/navBar/Navbar";
 import ImageProduct from "../components/imageProduct/ImageProduct";
-import Cart from "../components/cart/Cart";
+import AddCart from "../components/addCart/AddCart";
 import "./styles.css";
 import LightBox from "../components/lightBox/LightBox";
 import { useData } from "../context";
@@ -14,7 +14,7 @@ function Home() {
       <section className="section_cart">
         <ImageProduct />
 
-        <Cart />
+        <AddCart />
       </section>
     </div>
   );

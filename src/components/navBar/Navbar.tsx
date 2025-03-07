@@ -1,6 +1,7 @@
 import "./styles.css";
 import cart from "../../assets/icon-cart.svg";
 import profile from "../../assets/image-avatar.png";
+import BoxCart from "../boxCart/BoxCart";
 function Navbar() {
   return (
     <div className="nav">
@@ -23,6 +24,7 @@ function Navbar() {
               alt="cart shopping"
               className="navbar_img_profile"
             />
+            {/* <BoxCart /> */}
           </div>
         </div>
         {/* navbar_container */}

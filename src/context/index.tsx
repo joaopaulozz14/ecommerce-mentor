@@ -5,6 +5,7 @@ import {
   AllProvidersProp,
   DataContextType,
   ProductData,
+  Product,
 } from "../@types/contexts/contexts";
 
 export const DataContext = createContext<DataContextType>(
@@ -13,8 +14,10 @@ export const DataContext = createContext<DataContextType>(
 
 export const DataProvider = ({ children }: AllProvidersProp): JSX.Element => {
   const [data, setData] = useState<ProductData>([]);
-  const [mainPhotoID, setMainPhotoID] = useState<number>(1);
-  const [currentSlide, setCurrentSlide] = useState<number>(mainPhotoID);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [productID, setProductID] = useState<number>(0);
+  const [mainPhotoProduct, setMainPhotoProduct] = useState<number>(0);
+  const [currentSlide, setCurrentSlide] = useState<number>(0);
   const [lightIsActive, setLightIsActive] = useState<boolean>(false);
   const [error, setError] = useState("");
 
@@ -25,9 +28,13 @@ export const DataProvider = ({ children }: AllProvidersProp): JSX.Element => {
         if (!response.ok) {
           throw new Error("Erro ao buscar os dados");
         }
-        const result = await response.json();
-        console.log(result);
+        const result: Product[] = await response.json();
+
         setData(result);
+
+        if (result.length > 0) {
+          setSelectedProduct(result[productID]);
+        }
       } catch (e) {
         console.log(e);
       }
@@ -39,12 +46,17 @@ export const DataProvider = ({ children }: AllProvidersProp): JSX.Element => {
     <DataContext.Provider
       value={{
         data,
-        mainPhotoID,
+        selectedProduct,
+        productID,
         currentSlide,
         lightIsActive,
-        setMainPhotoID,
+        mainPhotoProduct,
+        setData,
+        setSelectedProduct,
+        setProductID,
         setCurrentSlide,
         setLightIsActive,
+        setMainPhotoProduct,
       }}
     >
       {children}

@@ -9,19 +9,29 @@ interface ProductImage {
   desktop: string;
 }
 
-interface Product {
+export interface Product {
   id: number;
-  image: ProductImage;
+  name: string;
+  price: number;
+  previousPrice: number;
+  discount: number;
+  quantity: number;
+  images: ProductImage[];
 }
 
 export type ProductData = Product[];
 
 export interface DataContextType {
   data: ProductData;
-  mainPhotoID: number;
+  selectedProduct: Product | null;
+  productID: number;
   currentSlide: number;
   lightIsActive: boolean;
+  mainPhotoProduct: number;
+  setData: React.Dispatch<React.SetStateAction<Product[]>>;
+  setSelectedProduct: React.Dispatch<React.SetStateAction<Product | null>>;
   setLightIsActive: React.Dispatch<React.SetStateAction<boolean>>;
-  setMainPhotoID: React.Dispatch<React.SetStateAction<number>>;
+  setProductID: React.Dispatch<React.SetStateAction<number>>;
   setCurrentSlide: React.Dispatch<React.SetStateAction<number>>;
+  setMainPhotoProduct: React.Dispatch<React.SetStateAction<number>>;
 }

@@ -3,8 +3,8 @@
   background-color: rgba(0, 0, 0, 0.637);
   width: 100%;
   min-height: 100%;
-  display: flex; /* Ativa o Flexbox */
-  justify-content: center; /* Alinha no eixo horizontal (esquerda-direita) */
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 .lightbox_container {

@@ -1,30 +1,28 @@
 [
   {
     "id": 1,
-    "image": {
-      "thumbnail": "src/assets/image-product-1-thumbnail.jpg",
-      "desktop": "src/assets/image-product-1.jpg"
-    }
-  },
-  {
-    "id": 2,
-    "image": {
-      "thumbnail": "src/assets/image-product-2-thumbnail.jpg",
-      "desktop": "src/assets/image-product-2.jpg"
-    }
-  },
-  {
-    "id": 3,
-    "image": {
-      "thumbnail": "src/assets/image-product-3-thumbnail.jpg",
-      "desktop": "src/assets/image-product-3.jpg"
-    }
-  },
-  {
-    "id": 4,
-    "image": {
-      "thumbnail": "src/assets/image-product-4-thumbnail.jpg",
-      "desktop": "src/assets/image-product-4.jpg"
-    }
+    "name": "Fall Limited Edition Sneakers",
+    "price": 125.0,
+    "previousPrice": 250.0,
+    "discount": 50,
+    "quantity": 1,
+    "images": [
+      {
+        "thumbnail": "src/assets/image-product-1-thumbnail.jpg",
+        "desktop": "src/assets/image-product-1.jpg"
+      },
+      {
+        "thumbnail": "src/assets/image-product-2-thumbnail.jpg",
+        "desktop": "src/assets/image-product-2.jpg"
+      },
+      {
+        "thumbnail": "src/assets/image-product-3-thumbnail.jpg",
+        "desktop": "src/assets/image-product-3.jpg"
+      },
+      {
+        "thumbnail": "src/assets/image-product-4-thumbnail.jpg",
+        "desktop": "src/assets/image-product-4.jpg"
+      }
+    ]
   }
 ]
