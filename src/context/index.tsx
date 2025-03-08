@@ -19,8 +19,9 @@ export const DataProvider = ({ children }: AllProvidersProp): JSX.Element => {
   const [mainPhotoProduct, setMainPhotoProduct] = useState<number>(0);
   const [currentSlide, setCurrentSlide] = useState<number>(0);
   const [lightIsActive, setLightIsActive] = useState<boolean>(false);
-  const [error, setError] = useState("");
-
+  const [showModalCart, setShowModalCart] = useState<boolean>(true);
+  const [totalPriceProduct, setTotalPriceProduct] = useState<number>(0);
+  
   useEffect(() => {
     async function fetchData() {
       try {
@@ -42,6 +43,12 @@ export const DataProvider = ({ children }: AllProvidersProp): JSX.Element => {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    setTotalPriceProduct(
+      (selectedProduct?.price ?? 0) * (selectedProduct?.quantity ?? 0)
+    );
+  }, [selectedProduct]);
+  
   return (
     <DataContext.Provider
       value={{
@@ -51,12 +58,15 @@ export const DataProvider = ({ children }: AllProvidersProp): JSX.Element => {
         currentSlide,
         lightIsActive,
         mainPhotoProduct,
+        totalPriceProduct,
+        showModalCart,
         setData,
         setSelectedProduct,
         setProductID,
         setCurrentSlide,
         setLightIsActive,
         setMainPhotoProduct,
+        setShowModalCart
       }}
     >
       {children}

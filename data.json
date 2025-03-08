@@ -5,7 +5,7 @@
     "price": 125.0,
     "previousPrice": 250.0,
     "discount": 50,
-    "quantity": 1,
+    "quantity": 3,
     "images": [
       {
         "thumbnail": "src/assets/image-product-1-thumbnail.jpg",

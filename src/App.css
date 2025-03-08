@@ -21,6 +21,8 @@
   /* outline: none; */
   box-sizing: border-box;
   font-family: "Kumbh Sans";
+  outline: none;
+  caret-color: transparent;
 }
 body {
   width: 100%;

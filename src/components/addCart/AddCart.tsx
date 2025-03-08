@@ -3,7 +3,7 @@ import cart from "../../assets/icon-cart.svg";
 import { useData } from "../../context";
 
 function AddCart() {
-  const { selectedProduct, setSelectedProduct } = useData();
+  const { selectedProduct, setSelectedProduct, setShowModalCart } = useData();
   return (
     <>
       <div className="add_cart_section">
@@ -49,8 +49,17 @@ function AddCart() {
               +
             </p>
           </div>
-          <button className="add_cart_section_button" onClick={() => {}}>
-            <img src={cart} alt="" className="add_cart_icon" />
+          <button
+            className="add_cart_section_button"
+            onClick={() => {
+              setShowModalCart(true);
+            }}
+          >
+            <img
+              src={cart}
+              alt="Add to cart button"
+              className="add_cart_icon"
+            />
             Add to cart
           </button>
         </div>

@@ -28,10 +28,13 @@ export interface DataContextType {
   currentSlide: number;
   lightIsActive: boolean;
   mainPhotoProduct: number;
+  totalPriceProduct: number;
+  showModalCart: boolean;
   setData: React.Dispatch<React.SetStateAction<Product[]>>;
   setSelectedProduct: React.Dispatch<React.SetStateAction<Product | null>>;
   setLightIsActive: React.Dispatch<React.SetStateAction<boolean>>;
   setProductID: React.Dispatch<React.SetStateAction<number>>;
   setCurrentSlide: React.Dispatch<React.SetStateAction<number>>;
   setMainPhotoProduct: React.Dispatch<React.SetStateAction<number>>;
+  setShowModalCart: React.Dispatch<React.SetStateAction<boolean>>;
 }
